@@ -5,6 +5,11 @@ Turn a meeting transcript into structured action items and route them to Notion 
 **This public repository is a teaser/docs/samples only. The complete workflow pack is paid and available on Gumroad.**
 
 - Landing page: https://opspacket-meeting-actions.netlify.app/
+- Patterns blog: https://opspacket-meeting-actions.netlify.app/blog/
+  - [Meeting transcript → Notion with n8n](https://opspacket-meeting-actions.netlify.app/blog/meeting-to-notion-n8n.html)
+  - [Notion action-item schema](https://opspacket-meeting-actions.netlify.app/blog/notion-action-items-schema.html)
+  - [Why null due dates beat invented Fridays](https://opspacket-meeting-actions.netlify.app/blog/null-dates.html)
+  - [Webhook contract](https://opspacket-meeting-actions.netlify.app/blog/webhook-contract.html)
 - Full pack: https://kayvanandre.gumroad.com/l/smbqns
 
 ## The pattern
@@ -41,4 +46,4 @@ The paid OpsPacket pack is licensed for personal and commercial use of the workf
 
 ## Topics
 
-n8n · Notion · Linear · automation
+n8n · Notion · Linear · meeting automation · action items
