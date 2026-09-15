@@ -1,30 +1,44 @@
-# OpsPacket — Meeting → Action Items (teaser)
+# OpsPacket: Meeting → Action Items (Teaser)
 
-Turn a meeting transcript into structured action items in **Notion** and/or **Linear** using n8n + an OpenAI-compatible LLM.
+Turn a meeting transcript into structured action items and route them to Notion and/or Linear with n8n.
 
-This repo is a **public teaser**: sample I/O and setup notes. The importable workflow pack is sold separately.
+**This public repository is a teaser/docs/samples only. The complete workflow pack is paid and available on Gumroad.**
 
-## Links
-- Landing: https://opspacket-meeting-actions.netlify.app/
-- Buy the pack ($97): https://kayvanandre.gumroad.com/l/smbqns
+- Landing page: https://opspacket-meeting-actions.netlify.app/
+- Full pack: https://kayvanandre.gumroad.com/l/smbqns
 
-## Pattern
-1. Webhook or manual trigger receives `{ transcript, meeting_title, destination }`
-2. LLM extracts JSON: `title`, `owner` (nullable), `due_date` (ISO or null), `priority`, `notes`
-3. Switch on `destination`: `notion` | `linear` | `both`
-4. Write Notion database pages and/or Linear issues
+## The pattern
 
-**Design rule:** prefer `null` owners/dates over invented ones.
+1. Accept a transcript through a manual test node or webhook.
+2. Normalize the meeting title, destination, and transcript.
+3. Send the transcript to an OpenAI-compatible LLM with a structured action-item schema.
+4. Parse and validate the extracted actions (title, owner, due date, priority, notes).
+5. Fan out to Notion database pages, Linear issues, or both.
+6. Return a compact success response with created-item links.
 
-## What’s in this repo
-- `SETUP.md` — credentials and schema
-- `SAMPLE_INPUT.md` / `SAMPLE_OUTPUT.md` — expected shapes
+The workflow is designed to preserve ambiguity: relative or incomplete dates can remain empty instead of being invented, and unassigned work remains unassigned.
 
-## What’s in the paid pack
-- Importable `meeting-to-actions.n8n.json`
-- Same docs, ready to import
+## Setup overview
 
-## License
-Samples and docs here: use freely for learning. Do **not** resell the paid workflow pack.
+You need n8n (cloud or self-hosted), an OpenAI-compatible LLM endpoint, and credentials for the destinations you use.
 
-Not affiliated with n8n, Notion, or Linear.
+- Import the purchased n8n workflow JSON.
+- Configure the LLM HTTP credential and endpoint/model.
+- For Notion, share a database with the integration and map Name, Owner, Due Date, Priority, and Meeting properties.
+- For Linear, configure the team ID and API credential; owner names are documented rather than auto-assigned in the starter version.
+- Test with the sample transcript, then activate the webhook only after credentials and access controls are configured.
+
+The full setup guide and importable workflow are included with the Gumroad pack; this repository intentionally does not publish the paid workflow JSON.
+
+## Samples
+
+- [Sample input transcript](examples/SAMPLE_INPUT.md)
+- [Sample output](examples/SAMPLE_OUTPUT.md)
+
+## License / usage note
+
+The paid OpsPacket pack is licensed for personal and commercial use of the workflow within your organization. It does not permit resale, redistribution, or republishing of the pack, its files, docs, or landing assets as a competing product. This repository contains only teaser documentation and illustrative samples.
+
+## Topics
+
+n8n · Notion · Linear · automation
