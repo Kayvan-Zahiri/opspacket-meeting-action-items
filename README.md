@@ -6,6 +6,7 @@ Turn a meeting transcript into structured action items and route them to Notion 
 
 - Landing page: https://opspacket-meeting-actions.netlify.app/
 - Patterns blog: https://opspacket-meeting-actions.netlify.app/blog/
+  - [Don’t guess assignees from first names alone](https://opspacket-meeting-actions.netlify.app/blog/assignee-matching.html)
   - [Meeting transcript → Notion with n8n](https://opspacket-meeting-actions.netlify.app/blog/meeting-to-notion-n8n.html)
   - [Notion action-item schema](https://opspacket-meeting-actions.netlify.app/blog/notion-action-items-schema.html)
   - [Why null due dates beat invented Fridays](https://opspacket-meeting-actions.netlify.app/blog/null-dates.html)
